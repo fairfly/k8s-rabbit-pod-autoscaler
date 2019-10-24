@@ -55,9 +55,9 @@ spec:
               memory: 50Mi
           env:
             - name: INTERVAL
-              value: "30"
+              value: "60"
             - name: RABBIT_HOST
-              value: "http://rabbitmq.example.com"
+              value: "portal2409-0.fairfly-rabbitmq.3348854214.composedb.com"
             - name: RABBIT_USER
               valueFrom:
                 secretKeyRef:
@@ -70,8 +70,8 @@ spec:
                   key: rabbit-pass
             - name: AUTOSCALING
               value: >
-                3|10|5|development|example|example.queue;
-                3|5|3|development|example2|example2.queue
+                3|10|5|default|cana-gds-gateway-ident-searcher-talma|cana-gds-gateway-ident-searcher-talma|production;
+                3|5|3|default|cana-new-itin-handler-talma|pnr_puller_callback_talma|production
             - name: LOGS
               value: HIGH
             - name: SLACK_HOOK
